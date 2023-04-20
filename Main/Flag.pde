@@ -3,6 +3,8 @@ public class flag
   public float w, h, x, y;
   float wChange, hChange;
   
+  int nLines = 6;
+  
   flag(float w, float h, float x, float y)
   {
      this.w = w;
@@ -44,7 +46,6 @@ public class flag
   
   void drawBars()
   { 
-    int nLines = 6;
     float colorRange = 100;
     float barHeight = h/nLines;
     float cGap = colorRange / nLines;
@@ -70,11 +71,11 @@ public class flag
     colorMode(RGB, 255);
     noStroke();
     
-    color[] trigColors = {#000000, #572400, #f78bf4, #a6eef5, #ffff00};
+    color[] trigColors = {#000000, #552500, #f58bf5, #a5eef5, #ffff00};
     
     pushMatrix();
     
-    translate(-(w/2), -((h/6)/2));
+    translate(-(w/2), -((h/nLines)/2));
 
     for(int i = 0; i < nTrig; i++)
     {
@@ -95,7 +96,7 @@ public class flag
     noStroke();
     
     pushMatrix();
-    translate(-(w/2), -((h/6)/2));
+    translate(-(w/2), -((h/nLines)/2));
     
     fill(#ff00ff);
     circle(w*0.08, h/2, circleSize);

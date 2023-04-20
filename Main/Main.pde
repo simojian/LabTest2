@@ -1,6 +1,6 @@
 
 
-flag f1 = new flag(100,200,50,50);
+flag f1 = new flag(200,100,50,50);
 
 
 void setup()

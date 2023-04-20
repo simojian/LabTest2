@@ -13,7 +13,7 @@ public class flag
   public void render()
   {
     int nLines = 6;
-    float barHeight = w/nLines;
+    float barHeight = h/nLines;
     
     
     pushMatrix();
@@ -25,7 +25,7 @@ public class flag
       rect(0, barHeight * i, w, barHeight);
     }
     
-    triangle(0, 0, 0, h, w/2, (h/5)*2);
+    triangle(0, 0, 0, h, (w/5)*2, h/2);
     
     popMatrix();
   }

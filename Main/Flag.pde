@@ -28,19 +28,19 @@ public class flag
   
   public void update()
   {
-    w += sin(frameCount) * wChange;
-    h += cos(frameCount) * hChange;
+    w += sin(frameCount / 3) * wChange;
+    h += cos(frameCount / 3) * hChange;
   }
   
   public void innit()
   {
-    wChange = w * 0.2;
-    hChange = h * 0.2;
+    wChange = w * 0.1;
+    hChange = h * 0.1;
   }
   
-  
+  //==================================================
   //individual elemets
-  //==================
+  //==================================================
   
   void drawBars()
   { 

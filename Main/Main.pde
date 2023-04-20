@@ -10,6 +10,9 @@ int nFlags = 10;
 float screenWidth = 500;
 float screenHeight = 500;
 
+float maxSpawnSize = 100;
+float minSpawnSize = 30;
+
 
 void setup()
 {
@@ -44,7 +47,7 @@ void innitFlags()
 {
   for(int i = 0; i < nFlags; i++)
   {
-    flags.add(new flag(random(50, 150), random(50, 150), random(0, screenWidth),random(0, screenHeight)));
+    flags.add(new flag(random(minSpawnSize, maxSpawnSize), random(minSpawnSize, maxSpawnSize), random(0, screenWidth),random(0 + maxSpawnSize/2, screenHeight - maxSpawnSize/2)));
     flags.get(i).innit();
   }
 }

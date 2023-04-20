@@ -47,7 +47,7 @@ void innitFlags()
 {
   for(int i = 0; i < nFlags; i++)
   {
-    flags.add(new flag(random(spawnWidthRange[0], spawnWidthRange[1]), random(spawnHeightRange[0], spawnHeightRange[1]), random(0, screenWidth),random(0 + spawnHeightRange[0]/2, screenHeight - spawnHeightRange[0])));
+    flags.add(new flag(random(spawnWidthRange[0], spawnWidthRange[1]), random(spawnHeightRange[0], spawnHeightRange[1]), random(0, screenWidth),random(0 + spawnHeightRange[1]/2, screenHeight - spawnHeightRange[1])));
     flags.get(i).innit();
   }
 }

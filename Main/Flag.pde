@@ -20,6 +20,8 @@ public class flag
     
     drawTrig();
     
+    drawCircle();
+    
     popMatrix();
   }
   
@@ -51,17 +53,30 @@ public class flag
   void drawTrig()
   {
     int nTrig = 5;
-    float startPosition = w * 0.3;
+    float startPosition = w * 0.4;
     float sizeDelta = startPosition * 0.1;
     
     colorMode(RGB, 255);
+    noStroke();
     
-    color[] trigColors = {#000000, #572400, #f78bf4, #a6eef5, #ffe70a};
+    color[] trigColors = {#000000, #572400, #f78bf4, #a6eef5, #ffff00};
 
     for(int i = 0; i < nTrig; i++)
     {
       fill(trigColors[i]);
       triangle(0, 0 + sizeDelta * i, 0, h - sizeDelta * i, startPosition - sizeDelta * i, h/2);
     }
+  }
+  
+  void drawCircle()
+  {
+    colorMode(RGB, 255);
+    
+    noStroke();
+    
+    fill(#ff00ff);
+    circle(w*0.08, h/2, 10);
+    fill(#ffff00);
+    circle(w*0.08, h/2, 10);
   }
 }

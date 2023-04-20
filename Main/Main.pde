@@ -5,7 +5,7 @@ flag f2 = new flag(60, 60, 200, 200);
 
 ArrayList<flag> flags = new ArrayList<flag>();
 
-int nFlags = 5;
+int nFlags = 10;
 
 float screenWidth = 500;
 float screenHeight = 500;
@@ -14,19 +14,27 @@ float screenHeight = 500;
 void setup()
 {
   size(500, 500);
-  background(255);
   
   innitFlags();
 }
 
 void draw()
 {
+  background(255);
+  
   for (int i = 0; i < flags.size(); i++)
   {
     flag fObject = flags.get(i);
     
     fObject.render();
     fObject.update();
+    
+    fObject.x++;
+    
+    if(fObject.x > width + fObject.w)
+    {
+      fObject.x = 0 - fObject.w + fObject.wChange;
+    }
   }
 }
 

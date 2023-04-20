@@ -31,7 +31,7 @@ public class flag
   public void update()
   {
     w += sin(frameCount) * wChange;
-    h += sin(frameCount) * hChange;
+    h += cos(frameCount) * hChange;
   }
   
   //individual elemets
@@ -46,6 +46,8 @@ public class flag
     
     colorMode(HSB, colorRange);
     noStroke();
+    
+    //rectMode(CENTER);
     
     for(int i = 0; i < nLines; i++)
     {

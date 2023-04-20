@@ -70,13 +70,16 @@ public class flag
   
   void drawCircle()
   {
+    float circleSize = h * 0.15;
+    float ringDelta = circleSize * 0.15;
+    
     colorMode(RGB, 255);
     
     noStroke();
     
     fill(#ff00ff);
-    circle(w*0.08, h/2, 10);
+    circle(w*0.08, h/2, circleSize);
     fill(#ffff00);
-    circle(w*0.08, h/2, 10);
+    circle(w*0.08, h/2, circleSize - ringDelta);
   }
 }

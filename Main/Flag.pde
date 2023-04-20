@@ -28,6 +28,9 @@ public class flag
     
   }
   
+  //individual elemets
+  //==================
+  
   void drawBars()
   { 
     int nLines = 6;
@@ -49,12 +52,15 @@ public class flag
   {
     int nTrig = 5;
     float startPosition = w * 0.3;
-    float sizeDelta = 10;
+    float sizeDelta = startPosition * 0.1;
     
-    fill(50, 100, 100);
+    colorMode(RGB, 255);
     
+    color[] trigColors = {#000000, #572400, #f78bf4, #a6eef5, #ffe70a};
+
     for(int i = 0; i < nTrig; i++)
     {
+      fill(trigColors[i]);
       triangle(0, 0 + sizeDelta * i, 0, h - sizeDelta * i, startPosition - sizeDelta * i, h/2);
     }
   }

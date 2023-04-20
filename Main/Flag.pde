@@ -18,7 +18,7 @@ public class flag
     
     drawBars();
     
-    triangle(0, 0, 0, h, (w/5)*2, h/2);
+    drawTrig();
     
     popMatrix();
   }
@@ -42,6 +42,20 @@ public class flag
     {
       fill(cGap * i, 100, 100);
       rect(0, barHeight * i, w, barHeight);
+    }
+  }
+  
+  void drawTrig()
+  {
+    int nTrig = 5;
+    float startPosition = w * 0.3;
+    float sizeDelta = 10;
+    
+    fill(50, 100, 100);
+    
+    for(int i = 0; i < nTrig; i++)
+    {
+      triangle(0, 0 + sizeDelta * i, 0, h - sizeDelta * i, startPosition - sizeDelta * i, h/2);
     }
   }
 }

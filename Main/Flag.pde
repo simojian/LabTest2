@@ -12,18 +12,11 @@ public class flag
   
   public void render()
   {
-    int nLines = 6;
-    float barHeight = h/nLines;
-    
-    
     pushMatrix();
     
     translate(x ,y);
     
-    for(int i = 0; i < nLines; i++)
-    {
-      rect(0, barHeight * i, w, barHeight);
-    }
+    drawBars();
     
     triangle(0, 0, 0, h, (w/5)*2, h/2);
     
@@ -33,5 +26,22 @@ public class flag
   public void update()
   {
     
+  }
+  
+  void drawBars()
+  { 
+    int nLines = 6;
+    float colorRange = 100;
+    float barHeight = h/nLines;
+    float cGap = colorRange / nLines;
+    
+    colorMode(HSB, colorRange);
+    noStroke();
+    
+    for(int i = 0; i < nLines; i++)
+    {
+      fill(cGap * i, 100, 100);
+      rect(0, barHeight * i, w, barHeight);
+    }
   }
 }

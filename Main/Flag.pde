@@ -2,6 +2,9 @@ public class flag
 {
   public float w, h, x, y;
   
+  float wChange = 20;
+  float hChange = 20;
+  
   flag(float w, float h, float x, float y)
   {
      this.w = w;
@@ -27,7 +30,8 @@ public class flag
   
   public void update()
   {
-    
+    w += sin(frameCount) * wChange;
+    h += sin(frameCount) * hChange;
   }
   
   //individual elemets

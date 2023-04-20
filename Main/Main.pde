@@ -26,6 +26,7 @@ void draw()
     flag fObject = flags.get(i);
     
     fObject.render();
+    fObject.update();
   }
 }
 

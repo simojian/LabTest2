@@ -45,5 +45,6 @@ void innitFlags()
   for(int i = 0; i < nFlags; i++)
   {
     flags.add(new flag(random(50, 150), random(50, 150), random(0, screenWidth),random(0, screenHeight)));
+    flags.get(i).innit();
   }
 }

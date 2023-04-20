@@ -1,9 +1,7 @@
 public class flag
 {
   public float w, h, x, y;
-  
-  float wChange = 20;
-  float hChange = 20;
+  float wChange, hChange;
   
   flag(float w, float h, float x, float y)
   {
@@ -12,7 +10,7 @@ public class flag
      this.x = x;
      this.y = y;
   }
-  
+ 
   public void render()
   {
     pushMatrix();
@@ -34,6 +32,13 @@ public class flag
     h += cos(frameCount) * hChange;
   }
   
+  public void innit()
+  {
+    wChange = w * 0.2;
+    hChange = h * 0.2;
+  }
+  
+  
   //individual elemets
   //==================
   
@@ -47,7 +52,7 @@ public class flag
     colorMode(HSB, colorRange);
     noStroke();
     
-    //rectMode(CENTER);
+    rectMode(CENTER);
     
     for(int i = 0; i < nLines; i++)
     {
@@ -66,12 +71,18 @@ public class flag
     noStroke();
     
     color[] trigColors = {#000000, #572400, #f78bf4, #a6eef5, #ffff00};
+    
+    pushMatrix();
+    
+    translate(-(w/2), -((h/6)/2));
 
     for(int i = 0; i < nTrig; i++)
     {
       fill(trigColors[i]);
       triangle(0, 0 + sizeDelta * i, 0, h - sizeDelta * i, startPosition - sizeDelta * i, h/2);
     }
+    
+    popMatrix();
   }
   
   void drawCircle()
@@ -83,9 +94,14 @@ public class flag
     
     noStroke();
     
+    pushMatrix();
+    translate(-(w/2), -((h/6)/2));
+    
     fill(#ff00ff);
     circle(w*0.08, h/2, circleSize);
     fill(#ffff00);
     circle(w*0.08, h/2, circleSize - ringDelta);
+    
+    popMatrix();
   }
 }

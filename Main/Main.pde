@@ -10,8 +10,8 @@ int nFlags = 10;
 float screenWidth = 500;
 float screenHeight = 500;
 
-float maxSpawnSize = 100;
-float minSpawnSize = 30;
+float maxSpawnSize = 120;
+float minSpawnSize = 40;
 
 
 void setup()
